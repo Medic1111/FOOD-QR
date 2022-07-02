@@ -4,7 +4,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 const QRCode = ({ url }) => {
   const location = useLocation();
   console.log(location);
-  console.log(`/restaurants/${url}`);
 
   const codeTag = (
     <QRCodeCanvas
@@ -12,7 +11,7 @@ const QRCode = ({ url }) => {
       size={300}
       bgColor={"#6db8c7"}
       level={"H"}
-      value={`${location.pathname}restaurants/${url}`}
+      value={`https://food-qr.herokuapp.com/restaurants/${url}`}
     />
   );
 
