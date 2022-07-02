@@ -10,7 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 app.use(morgan("dev"));
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+// app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
 // DB CONNECTION
 mongoose.connect(process.env.DB_URI, (err) =>
@@ -55,9 +56,10 @@ app.get("/api/restaurants/:_id", (req, res) => {
 
 // UNHANDLED ROUTES
 app.get("*", (req, res) => {
-  res.sendFile(
-    express.static(path.resolve(__dirname, "../client/build", "index.html"))
-  );
+  // res.sendFile(
+  //   express.static(path.resolve(__dirname, "../client/build", "index.html"))
+  // );
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 // SERVER
