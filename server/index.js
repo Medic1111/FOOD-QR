@@ -54,7 +54,7 @@ app.get("/api/restaurants/:_id", (req, res) => {
 });
 
 // UNHANDLED ROUTES
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(
     express.static(path.resolve(__dirname, "../client/build", "index.html"))
   );

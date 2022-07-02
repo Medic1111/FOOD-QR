@@ -1,9 +1,5 @@
 import "./App.css";
-import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
-import QRCode from "./components/QRCode/QRCode";
-import Form from "./components/Form/Form";
+import React from "react";
 import Specific from "./pages/Specific";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
