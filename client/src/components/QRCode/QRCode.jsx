@@ -1,5 +1,5 @@
 import { QRCodeCanvas } from "qrcode.react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const QRCode = ({ url }) => {
   const location = useLocation();
