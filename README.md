@@ -1,6 +1,18 @@
 # FOOD QR
 
-App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used as a touchless menu
+[Live App Here](https://food-qr.herokuapp.com/)
+
+[Live Menu Here](https://food-qr.herokuapp.com/restaurants/62c1ff2c155033c236504176)
+
+App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
+
+### TEST
+
+> If you are not interested in filliong out the forms, you can check an example of a live menu on the link up top
+
+1. Fill out entries, and get your QR Code
+2. Scan it with your phone camera and click the link you will receive on the phone
+3. Your menu will show up
 
 ### TECH
 
