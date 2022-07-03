@@ -1,0 +1,55 @@
+.form {
+  padding: 5vh 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-direction: column;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2.5vh 2.5vw;
+  width: 60%;
+  gap: 1em;
+  border: rgb(43, 10, 43) solid;
+}
+.legend {
+  font-size: 1.5em;
+  padding: 0 1em;
+  letter-spacing: 0.9px;
+  color: rgb(43, 10, 43);
+}
+
+.input {
+  height: 5vh;
+  width: 80%;
+  border: transparent;
+  font-size: 1.7em;
+  padding-left: 0.5em;
+  outline: none;
+  background-color: rgba(225, 207, 225, 0.42);
+  color: rgb(43, 10, 43);
+  letter-spacing: 0.7px;
+}
+.label {
+  font-size: 1.6em;
+  color: rgb(43, 10, 43);
+}
+.btn {
+  height: 5vh;
+  width: 60%;
+  border: transparent;
+  font-size: 1.7em;
+  background-color: rgb(94, 22, 94);
+  color: #f7f7f7;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+  margin-top: 5vh;
+}
+.btn:hover {
+  background-color: rgb(137, 32, 137);
+}

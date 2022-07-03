@@ -1,0 +1,28 @@
+.div {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a58da1;
+  gap: 2em;
+  flex-direction: column;
+}
+.p {
+  font-size: 2.8em;
+  margin: 2em 0;
+}
+.btn {
+  width: 10em;
+  height: 5vh;
+  background-color: #6e1c61;
+  color: #f7f7f7;
+  border: transparent;
+  margin-top: 2.5vh;
+  font-size: 1.7em;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #962984;
+}

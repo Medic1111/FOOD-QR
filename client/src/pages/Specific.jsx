@@ -1,5 +1,5 @@
 import classes from "./Specific.module.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 const Specific = () => {
@@ -21,11 +21,15 @@ const Specific = () => {
   useEffect(fetchApi, []);
 
   return (
-    <React.Fragment>
-      <h1>{info.resName}</h1>
-      <p>{info.resNumber}</p>
-      <p>{info.resAddress}</p>
-    </React.Fragment>
+    <div className={classes.div}>
+      <header className={classes.header}>
+        <h2 className={classes.h2}>{info.resName}</h2>
+      </header>
+      <div className={classes.divContact}>
+        <span className={classes.span}>{info.resNumber}</span>
+        <span className={classes.span}>{info.resAddress}</span>
+      </div>
+    </div>
   );
 };
 
