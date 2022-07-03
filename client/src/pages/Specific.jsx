@@ -2,6 +2,7 @@ import classes from "./Specific.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
 const Specific = () => {
   const urlId = useParams().id;
 
@@ -12,7 +13,6 @@ const Specific = () => {
     resHours: "",
     menu: [],
   });
-  console.log(info.menu);
 
   const fetchApi = () => {
     axios

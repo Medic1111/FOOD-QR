@@ -4,6 +4,7 @@ import MenuCtx from "../../store/menu-ctx";
 
 const EntryCatForm = ({ setWhichForm }) => {
   const menuCtxManager = useContext(MenuCtx);
+  const [showRequired, setShowRequired] = useState(false);
 
   const [catOne, setCatOne] = useState("");
   const [catTwo, setCatTwo] = useState("");
@@ -13,22 +14,35 @@ const EntryCatForm = ({ setWhichForm }) => {
 
   const addCategoriesToMenu = (e) => {
     e.preventDefault();
-    let catArr = [catOne, catTwo, catThree, catFour, catFive];
+    if (
+      catOne !== "" ||
+      catTwo !== "" ||
+      catThree !== "" ||
+      catFour !== "" ||
+      catFive !== ""
+    ) {
+      let catArr = [catOne, catTwo, catThree, catFour, catFive];
 
-    let filtered = catArr.filter((item) => {
-      return item !== "";
-    });
+      let filtered = catArr.filter((item) => {
+        return item !== "";
+      });
 
-    filtered.forEach((category) => {
-      menuCtxManager.addCategoryToMenu(category);
-    });
-    setWhichForm((prev) => prev + 1);
+      filtered.forEach((category) => {
+        menuCtxManager.addCategoryToMenu(category);
+      });
+      setWhichForm((prev) => prev + 1);
+    } else {
+      setShowRequired(true);
+    }
   };
 
   return (
     <form onSubmit={addCategoriesToMenu} className={classes.form}>
       <fieldset className={classes.fieldset}>
         <legend className={classes.legend}>Category</legend>
+        {showRequired && (
+          <p className={classes.feedback}>At least one field is required</p>
+        )}
         <label className={classes.label}>Enter up to 5 categories</label>
         <input
           value={catOne}

@@ -1,6 +1,6 @@
 import classes from "../Form/Form.module.css";
 import MenuCtx from "../../store/menu-ctx";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import DishForm from "../DishForm/DishForm";
 import axios from "axios";
 import DisplayCtx from "../../store/display-ctx";
@@ -32,9 +32,11 @@ const CatSpecForm = ({ setUrl }) => {
       {menuCtxManager.menu.map((obj, index) => {
         return <DishForm key={`FORM_CAT_${index}`} obj={obj} index={index} />;
       })}
-      <button onClick={getCodeHandler} className={classes.btn}>
-        Get Code
-      </button>
+      <div className={classes.codeBtnBox}>
+        <button onClick={getCodeHandler} className={classes.btn}>
+          Get Code
+        </button>
+      </div>
       ;
     </React.Fragment>
   );

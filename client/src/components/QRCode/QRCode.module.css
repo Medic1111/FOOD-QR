@@ -5,15 +5,21 @@
   justify-content: center;
   align-items: center;
   color: #a58da1;
-  gap: 2em;
+  gap: 1em;
   flex-direction: column;
 }
 .p {
   font-size: 2.8em;
-  margin: 2em 0;
+  margin: 0.5em 0;
+  color: #6e1c61;
+}
+.txt {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
 }
 .btn {
-  width: 10em;
+  width: 15em;
   height: 5vh;
   background-color: #6e1c61;
   color: #f7f7f7;
@@ -22,6 +28,7 @@
   font-size: 1.7em;
   letter-spacing: 0.7px;
   cursor: pointer;
+  margin-top: 5vh;
 }
 .btn:hover {
   background-color: #962984;

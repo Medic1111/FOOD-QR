@@ -53,3 +53,15 @@
 .btn:hover {
   background-color: rgb(137, 32, 137);
 }
+.feedback {
+  color: rgb(43, 10, 43);
+  font-size: 1.8em;
+  letter-spacing: 0.8px;
+}
+.codeBtnBox {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

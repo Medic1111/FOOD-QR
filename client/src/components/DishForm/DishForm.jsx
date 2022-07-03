@@ -4,7 +4,8 @@ import { useContext, useState } from "react";
 
 const DishForm = ({ obj }) => {
   const menuCtxManager = useContext(MenuCtx);
-
+  const [showAdd, setShowAdd] = useState(false);
+  const [showRequired, setShowRequired] = useState(false);
   const [dish, setDish] = useState({
     dish: "",
     description: "",
@@ -12,6 +13,8 @@ const DishForm = ({ obj }) => {
   });
 
   const inputChange = (e) => {
+    setShowAdd(false);
+    setShowRequired(false);
     const { name, value } = e.target;
 
     setDish((prev) => {
@@ -21,13 +24,33 @@ const DishForm = ({ obj }) => {
 
   const addDishToCatHandler = (e) => {
     e.preventDefault();
-    menuCtxManager.addDishToCat(obj.category, dish);
+    if (dish.dish !== "" && dish.description !== "" && dish.price !== "") {
+      menuCtxManager.addDishToCat(obj.category, dish);
+      setDish({
+        dish: "",
+        description: "",
+        price: "",
+      });
+      setShowAdd(true);
+    } else {
+      setShowRequired(true);
+    }
   };
 
   return (
     <form className={classes.form}>
+      <p className={classes.feedback}>Enter one dish/meal at a time</p>
+      <p className={classes.feedback}>
+        When you're done with all entries, get your QR Code
+      </p>
+      <p className={classes.feedback}>Don't forget to print it!</p>
+
       <fieldset className={classes.fieldset}>
         <legend className={classes.legend}>{obj.category}</legend>
+        {showRequired && (
+          <p className={classes.feedback}>All fields are required</p>
+        )}
+        {showAdd && <p className={classes.feedback}>Entry Added</p>}
         <input
           name="dish"
           onChange={inputChange}
