@@ -14,6 +14,7 @@ body {
   height: inherit;
   width: inherit;
   background-color: #f7f7f7;
+  position: relative;
 }
 
 @media (max-width: 798px) {

@@ -1,78 +1,20 @@
-import axios from "axios";
 import { useState } from "react";
-import classes from "./Form.module.css";
+import CatSpecForm from "../CatSpecForm/CatSpecForm";
+import EntryCatForm from "../EntryCatForm/EntryCatForm";
+import GenForm from "../GenForm/GenForm";
 
-const Form = ({ setUrl, setShowCode, setShowForm }) => {
-  const [userInput, setUserInput] = useState({
-    resName: "",
-    resAddress: "",
-    resNumber: "",
-  });
+const Form = ({ setUrl }) => {
+  const [whichForm, setWhichForm] = useState(1);
 
-  const changeInputHandler = (event) => {
-    const { name, value } = event.target;
-
-    setUserInput((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
-
-  const submitFormHandler = async (e) => {
-    e.preventDefault();
-
-    await axios
-      .post("/api/new", userInput)
-      .then((serverRes) => {
-        setUrl(serverRes.data.message);
-        setShowCode(true);
-        setShowForm(false);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  return (
-    <form onSubmit={submitFormHandler} className={classes.form}>
-      <fieldset className={classes.fieldset}>
-        <legend className={classes.legend}>General Info</legend>
-        <label className={classes.label} htmlFor="resName">
-          {" "}
-          Restaurant Name
-        </label>
-        <input
-          className={classes.input}
-          name="resName"
-          onChange={changeInputHandler}
-          value={userInput.resName}
-          id="resName"
-          type="text"
-        />
-        <label className={classes.label} htmlFor="resAddress">
-          {" "}
-          Address
-        </label>
-        <input
-          className={classes.input}
-          name="resAddress"
-          onChange={changeInputHandler}
-          value={userInput.resAddress}
-          type="text"
-          id="resAddress"
-        />
-        <label className={classes.label} htmlFor="resNumber">
-          Phone Number
-        </label>
-        <input
-          className={classes.input}
-          name="resNumber"
-          onChange={changeInputHandler}
-          value={userInput.resPhone}
-          type="text"
-          id="resNumber"
-        />
-      </fieldset>
-      <input type="submit" className={classes.btn} />
-    </form>
-  );
+  if (whichForm === 1) {
+    return <GenForm setWhichForm={setWhichForm} />;
+  }
+  if (whichForm === 2) {
+    return <EntryCatForm setWhichForm={setWhichForm} />;
+  }
+  if (whichForm === 3) {
+    return <CatSpecForm setUrl={setUrl} />;
+  }
 };
 
 export default Form;

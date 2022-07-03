@@ -1,28 +1,22 @@
-import Form from "../components/Form/Form";
 import QRCode from "../components/QRCode/QRCode";
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
+import Modal from "../components/Modal/Modal";
+import DisplayCtx from "../store/display-ctx";
 
 const Home = () => {
+  const ctxManager = useContext(DisplayCtx);
+
   const [url, setUrl] = useState("");
-  const [showHero, setShowHero] = useState(true);
-  const [showForm, setShowForm] = useState(false);
-  const [showCode, setShowCode] = useState(false);
+
   return (
     <React.Fragment>
       <Header />
-      {showHero && <Hero setShowForm={setShowForm} setShowHero={setShowHero} />}
-      {showForm && (
-        <Form
-          setUrl={setUrl}
-          url={url}
-          setShowForm={setShowForm}
-          setShowCode={setShowCode}
-        />
-      )}
-      {showCode && <QRCode url={url} />}
+      {ctxManager.isHero && <Hero />}
+      {ctxManager.isModal && <Modal setUrl={setUrl} />}
+      {ctxManager.isCode && <QRCode url={url} />}
     </React.Fragment>
   );
 };

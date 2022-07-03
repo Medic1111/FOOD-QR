@@ -1,9 +1,13 @@
 import classes from "./Hero.module.css";
 import heroPic from "../../assets/hero.png";
-const Hero = ({ setShowForm, setShowHero }) => {
+import DisplayCtx from "../../store/display-ctx";
+import { useContext } from "react";
+
+const Hero = () => {
+  const ctxManager = useContext(DisplayCtx);
+
   const showFormHandler = () => {
-    setShowForm(true);
-    setShowHero(false);
+    ctxManager.openModalCloseHero();
   };
 
   return (

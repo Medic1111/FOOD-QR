@@ -22,6 +22,8 @@ const resSchema = new mongoose.Schema({
   resName: String,
   resAddress: String,
   resNumber: String,
+  resHours: String,
+  menu: Array,
 });
 
 const Restaurant = new mongoose.model("Restaurant", resSchema);
@@ -29,15 +31,18 @@ const Restaurant = new mongoose.model("Restaurant", resSchema);
 // POST NEW REST
 
 app.post("/api/new", async (req, res) => {
-  const { resName, resAddress, resNumber } = req.body;
+  const { resName, resAddress, resNumber, resHours, menu } = req.body;
 
   const newRes = new Restaurant({
     resName,
     resAddress,
     resNumber,
+    resHours,
+    menu,
   });
 
   await newRes.save((err, doc) => {
+    console.log(doc);
     err
       ? res.status(500).json({ message: "Server error has occured" })
       : res.status(200).json({ message: doc._id });

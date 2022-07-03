@@ -12,8 +12,8 @@ const QRCode = ({ url }) => {
   const codeTag = (
     <QRCodeCanvas
       id="qrCode"
-      size={150}
-      bgColor={"#a58da1"}
+      size={175}
+      bgColor={"#f7f7f7"}
       level={"H"}
       value={`https://food-qr.herokuapp.com/restaurants/${url}`}
     />

@@ -9,12 +9,18 @@ const Specific = () => {
     resName: "",
     resNumber: "",
     resAddress: "",
+    resHours: "",
+    menu: [],
   });
+  console.log(info.menu);
 
   const fetchApi = () => {
     axios
       .get(`/api/restaurants/${urlId}`)
-      .then((serverRes) => setInfo(serverRes.data))
+      .then((serverRes) => {
+        console.log(serverRes.data);
+        setInfo(serverRes.data);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -28,7 +34,28 @@ const Specific = () => {
       <div className={classes.divContact}>
         <span className={classes.span}>{info.resNumber}</span>
         <span className={classes.span}>{info.resAddress}</span>
+        <span className={classes.span}>{info.resHours}</span>
       </div>
+      {info.menu.map((obj) => {
+        return (
+          <React.Fragment>
+            <h3 className={classes.h3}>{obj.category}</h3>
+            {obj.dishes.map((dish) => {
+              return (
+                <div className={classes.dishBox}>
+                  <div className={classes.dishTxtBox}>
+                    <p className={classes.dishName}>{dish.dish}</p>
+                    <p className={classes.dishDescription}>
+                      {dish.description}
+                    </p>
+                  </div>
+                  <p className={classes.dishPrice}>{dish.price}</p>
+                </div>
+              );
+            })}
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 };
