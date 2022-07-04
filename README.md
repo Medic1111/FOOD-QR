@@ -4,8 +4,7 @@
 
 [Live Menu Here](https://food-qr.herokuapp.com/restaurants/62c237a57755faca5964cf0a)
 
-![Code to scan](code.png)
-<img src="../client/assets/code.png"/>
+![Code to scan](https://github.com/Medic1111/food-QR/main/client/src/assets/code.png)
 
 App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
 
