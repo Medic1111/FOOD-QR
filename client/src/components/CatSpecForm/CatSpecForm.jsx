@@ -8,6 +8,7 @@ import DisplayCtx from "../../store/display-ctx";
 const CatSpecForm = ({ setUrl }) => {
   const menuCtxManager = useContext(MenuCtx);
   const displayCtxManager = useContext(DisplayCtx);
+  const [serverErr, setServerErr] = useState(false);
 
   const configMenu = {
     resName: menuCtxManager.genInfo.resName,
@@ -23,8 +24,11 @@ const CatSpecForm = ({ setUrl }) => {
       .then((serverRes) => {
         setUrl(serverRes.data.message);
         displayCtxManager.closeAllandShowCode(true);
+        setServerErr(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setServerErr(true);
+      });
   };
 
   return (
@@ -32,6 +36,13 @@ const CatSpecForm = ({ setUrl }) => {
       {menuCtxManager.menu.map((obj, index) => {
         return <DishForm key={`FORM_CAT_${index}`} obj={obj} index={index} />;
       })}
+      {serverErr && (
+        <div className={classes.codeBtnBox}>
+          <p className={classes.feedback}>
+            Oops, something went wrong. Try getting code again!
+          </p>
+        </div>
+      )}
       <div className={classes.codeBtnBox}>
         <button onClick={getCodeHandler} className={classes.btn}>
           Get Code
