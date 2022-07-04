@@ -10,7 +10,11 @@ App that allows a food establishment to create a standardized online menu and ge
 
 ### TEST
 
-> If you are not interested in filliong out the forms, you can check an example of a live menu on the link up top
+> If you are not interested in filling out the forms, you can check an example of a live menu on the link up top
+
+> You can test the code my scanning the code in the image above with your phone camera
+
+> Or you can test the application from scratch:
 
 1. Fill out entries, and get your QR Code
 2. Scan it with your phone camera and click the link you will receive on the phone
