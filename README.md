@@ -2,7 +2,11 @@
 
 [Live App Here](https://food-qr.herokuapp.com/)
 
+![Img of live app](./client/src/assets/app.png)
+
 [Live Menu Here](https://food-qr.herokuapp.com/restaurants/62c237a57755faca5964cf0a)
+
+![Img of live menu](./client/src/assets/menu.png)
 
 ![Code to scan](./client/src/assets/code.png)
 
