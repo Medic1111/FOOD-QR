@@ -8,6 +8,8 @@
 
 ![Img of live menu](./client/src/assets/menu.png)
 
+## SCAN THIS CODE FOR TEST
+
 ![Code to scan](./client/src/assets/code.png)
 
 App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
@@ -44,5 +46,5 @@ App that allows a food establishment to create a standardized online menu and ge
 #### INSTALL
 
 1. Download the project
-2. Open the project and on the root run `npm server/index.js`
-3. On a different terminal, run `cd client` and then `npm start`
+2. Open the project and on the root run `npm install` then `node server/index.js`
+3. On a different terminal, run `cd client`, then `npm install` and finally `npm start`
