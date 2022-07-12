@@ -5,6 +5,29 @@
   align-items: center;
   gap: 2em;
   flex-direction: column;
+  /* TEST */
+  width: 50%;
+  padding: 0;
+  height: 80vh;
+}
+
+/* TEST */
+.previewDiv {
+  padding: 5vh 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+.previewBox {
+  max-height: 76%;
+  min-height: 76%;
+  width: 40%;
+  font-size: 52.5%;
+  border: solid;
+  overflow-y: scroll;
+  /* height: 100%; */
 }
 
 .fieldset {
@@ -13,10 +36,22 @@
   justify-content: flex-start;
   align-items: center;
   padding: 2.5vh 2.5vw;
-  width: 60%;
+  width: 100%;
   gap: 1em;
   border: rgb(43, 10, 43) solid;
 }
+/* TEST END */
+
+/* .fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2.5vh 2.5vw;
+  width: 60%;
+  gap: 1em;
+  border: rgb(43, 10, 43) solid;
+} */
 .legend {
   font-size: 1.5em;
   padding: 0 1em;
@@ -64,4 +99,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* TEST */
+
+@media (max-width: 798px) {
+  .previewDiv {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+  }
+  .form {
+    width: 90%;
+  }
+  .previewBox {
+    width: 90%;
+  }
 }

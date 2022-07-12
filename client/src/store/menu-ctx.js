@@ -23,13 +23,10 @@ export const MenuCtxProvider = (props) => {
   };
 
   const addDishToCat = (cat, dish) => {
-    console.log(cat);
-    console.log(dish);
     let foundItem = menu.find((obj) => {
       return obj.category === cat;
     });
     foundItem.dishes.push(dish);
-    console.log(menu);
   };
 
   return (
