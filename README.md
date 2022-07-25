@@ -41,7 +41,17 @@ App that allows a food establishment to create a standardized online menu and ge
    - Heroku
 
 > STATUS: DEVELOPMENT
+
 > Visual planning by exploring how the features will work once deployed
+
+#### Considerations:
+
+- [x] Add a preview menu
+- [] Allow for deletion/edit
+
+#### Issues:
+
+- [] Fix add dish to Cat. preview
 
 #### INSTALL
 
