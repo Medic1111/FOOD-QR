@@ -2,7 +2,6 @@ const { Restaurant } = require("../models/models");
 
 const getSpec = (req, res) => {
   let id = req.params._id;
-  console.log(id);
 
   Restaurant.find({ _id: id }, (err, doc) => {
     err
