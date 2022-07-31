@@ -30,4 +30,5 @@ app.get("*", (req, res) => {
 
 // SERVER
 
-app.listen(process.env.PORT || 3002, () => console.log("Server Spinning"));
+// app.listen(process.env.PORT || 3002, () => console.log("Server Spinning"));
+module.exports = app;
