@@ -1,0 +1,38 @@
+@restId = 62cdc0054b0898f629c7235f
+
+GET http://localhost:3002/api/restaurants/{{restId}} HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:3002/api/new HTTP/1.1
+Content-Type: application/json
+
+{
+  "resName": "FoodySpot",
+  "resAddress": "2655 Collins Avenue",
+  "resNumber": "898989",
+  "resHours": "mon- fri 8-9",
+  "menu": [
+    {
+      "category": "Breakfast",
+      "dishes": [
+        {
+          "dish": "",
+          "description": "",
+          "price": ""
+        }
+      ]
+    },
+    {
+      "category": "Lunch",
+      "dishes": [
+        {
+          "dish": "",
+          "description": "",
+          "price": ""
+        }
+      ]
+    }
+  ]
+  }
