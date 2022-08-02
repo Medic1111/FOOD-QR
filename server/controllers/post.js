@@ -12,7 +12,6 @@ const postNewRes = async (req, res) => {
   });
 
   await newRes.save((err, doc) => {
-    console.log(doc);
     err
       ? res.status(500).json({ message: "Server error has occured" })
       : res.status(200).json({ message: doc._id });

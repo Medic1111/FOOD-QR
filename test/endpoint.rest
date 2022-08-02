@@ -1,6 +1,11 @@
 @restId = 62cdc0054b0898f629c7235f
-
+@wrongId = 62cdc0054b0829c7235f
 GET http://localhost:3002/api/restaurants/{{restId}} HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:3002/api/restaurants/{{wrongId}} HTTP/1.1
 Content-Type: application/json
 
 ###
@@ -34,5 +39,6 @@ Content-Type: application/json
         }
       ]
     }
+  
   ]
-  }
+}
