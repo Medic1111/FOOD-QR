@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "bf870b66-bbaa-4cbe-abee-a0d3d1aca578",
+		"name": "FOODQR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19650814"
+	},
+	"item": [
+		{
+			"name": "GET RESTAURANT BY ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/api/restaurants/62cdc0054b0898f629c7235f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"restaurants",
+						"62cdc0054b0898f629c7235f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST NEW RESTAURANT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"resName\": \"FoodySpot\",\n      \"resAddress\": \"2655 Collins Avenue\",\n      \"resNumber\": \"898989\",\n      \"resHours\": \"mon- fri 8-9\",\n      \"menu\": [\n        {\n          \"category\": \"Breakfast\",\n          \"dishes\": [\n            {\n              \"dish\": \"\",\n              \"description\": \"\",\n              \"price\": \"\"\n            }\n          ]\n        },\n        {\n          \"category\": \"Lunch\",\n          \"dishes\": [\n            {\n              \"dish\": \"\",\n              \"description\": \"\",\n              \"price\": \"\"\n            }\n          ]\n        }\n      ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/api/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RESTAURANT WITH WRONG ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/api/restaurants/{{wrongId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"restaurants",
+						"{{wrongId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "wrongId",
+			"value": "62cdc0054b0829c7235f"
+		}
+	]
+}
