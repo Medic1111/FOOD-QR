@@ -1,6 +1,6 @@
 # FOOD QR
 ---
-> [UPDATED VERSION: Full Stack TypeScript](https://github.com/Medic1111/FOOD-QR-TS) is now my featured version.
+> [UPDATED VERSION: Full Stack TypeScript](https://github.com/Medic1111/FOOD-QR-FULL-STACK-TS) is now my featured version.
 
 ---
 
