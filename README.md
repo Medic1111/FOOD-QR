@@ -4,7 +4,6 @@
 
 ---
 
-[Live App Here](https://food-qr.herokuapp.com/)
 
 ![Img of live app](./client/src/assets/app.png)
 
