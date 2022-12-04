@@ -50,11 +50,11 @@ App that allows a food establishment to create a standardized online menu and ge
 #### Considerations:
 
 - [x] Add a preview menu
-- [] Allow for deletion/edit
+- [ ] Allow for deletion/edit
 
 #### Issues:
 
-- [] Fix add dish to Cat. preview
+- [ ] Fix add dish to Cat. preview
 
 #### INSTALL
 
